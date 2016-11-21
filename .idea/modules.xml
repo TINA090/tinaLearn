@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Shop/Shop.iml" filepath="$PROJECT_DIR$/Shop/Shop.iml" />
+      <module fileurl="file://$PROJECT_DIR$/imooc/imooc.iml" filepath="$PROJECT_DIR$/imooc/imooc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/project/project.iml" filepath="$PROJECT_DIR$/project/project.iml" />
+      <module fileurl="file://$PROJECT_DIR$/project2/project2.iml" filepath="$PROJECT_DIR$/project2/project2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/project3/project3.iml" filepath="$PROJECT_DIR$/project3/project3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/project4/project4.iml" filepath="$PROJECT_DIR$/project4/project4.iml" />
+      <module fileurl="file://$PROJECT_DIR$/project5/project5.iml" filepath="$PROJECT_DIR$/project5/project5.iml" />
+      <module fileurl="file://$PROJECT_DIR$/project6/project6.iml" filepath="$PROJECT_DIR$/project6/project6.iml" />
+      <module fileurl="file://$PROJECT_DIR$/project7/project7.iml" filepath="$PROJECT_DIR$/project7/project7.iml" />
+      <module fileurl="file://$PROJECT_DIR$/project8/project8.iml" filepath="$PROJECT_DIR$/project8/project8.iml" />
+      <module fileurl="file://$PROJECT_DIR$/project9/project9.iml" filepath="$PROJECT_DIR$/project9/project9.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tinaLearn.iml" filepath="$PROJECT_DIR$/tinaLearn.iml" />
+    </modules>
+  </component>
+</project>
