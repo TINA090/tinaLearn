@@ -1,4 +1,4 @@
-package com.tina.example;
+package com.tina.main;
 
 import org.glassfish.grizzly.http.server.HttpServer;
 import org.glassfish.jersey.grizzly2.httpserver.GrizzlyHttpServerFactory;
@@ -23,7 +23,7 @@ public class Main {
     }
 
     private static URI getBaseURI() {
-        return UriBuilder.fromUri("http://localhost/").port(getPort(9998)).build();
+        return UriBuilder.fromUri("http://localhost/").port(getPort(8080)).build();
     }
 
     public static final URI BASE_URI = getBaseURI();
@@ -31,7 +31,7 @@ public class Main {
     protected static HttpServer startServer() throws IOException {
         System.out.println("Starting grizzly...");
         ResourceConfig rc = new ResourceConfig();
-        rc.packages(true, "com.tina.example");
+        rc.packages(true, "com.tina");
         return GrizzlyHttpServerFactory.createHttpServer(getBaseURI(), rc);
     /*
         final Map<String, String> initParams = new HashMap<String, String>();
