@@ -15,29 +15,41 @@ public class Example {
     }
 
 
+
+
     @GET
-    @Path("/{param}")
+    @Path("/{aaaa}-{bbbb}")
     @Produces("text/plain;charset=UTF-8")
-    public String sayHelloToUTF8(@PathParam("param") String username) {
-        return "Hello " + username;
+    public String sayHelloToUTF8(@PathParam("aaaa") String username, @PathParam("bbbb") String password) {
+        return "Hello " + username + "+" + password;
+    }
+
+    @GET
+    @Path("/{aaaa}")
+    @Produces("text/plain;charset=UTF-8")
+    public String sayHelloToUTF82(@PathParam("aaaa") String username) {
+        return "Hello " + username + "+";
     }
 
     @GET
     @Path("/get")
     @Produces(MediaType.APPLICATION_JSON)
-    public User sayHelloToJson(@QueryParam("username") String username) {
+    public User sayHelloToJson(@QueryParam("username") String username, @QueryParam("id") int id) {
         User user= new User();
-        user.setId(1);
+        user.setId(id);
         user.setName(username);
         return user;
     }
 
 
     @POST
-    @Path("/update")
-    @Consumes(MediaType.APPLICATION_JSON)
+    @Path("/update/{aaaa}")
     @Produces(MediaType.APPLICATION_JSON)
     public User updateUser(User user) {
+        System.out.println(user);
+        if (user == null) {
+            user = new User();
+        }
         user.setId(2);
         user.setName("update name:"+user.getName());
         return user;
