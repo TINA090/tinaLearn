@@ -17,7 +17,6 @@
       <module fileurl="file://$PROJECT_DIR$/william/singleton/singleton.iml" filepath="$PROJECT_DIR$/william/singleton/singleton.iml" />
       <module fileurl="file://$PROJECT_DIR$/thoughtworks/thoughtworks.iml" filepath="$PROJECT_DIR$/thoughtworks/thoughtworks.iml" />
       <module fileurl="file://$PROJECT_DIR$/tinaLearn.iml" filepath="$PROJECT_DIR$/tinaLearn.iml" />
-      <module fileurl="file://$PROJECT_DIR$/webapp/webapp.iml" filepath="$PROJECT_DIR$/webapp/webapp.iml" />
     </modules>
   </component>
 </project>
