@@ -1,6 +1,8 @@
 package com.tina.main;
 
 import org.glassfish.grizzly.http.server.HttpServer;
+import org.glassfish.grizzly.http.server.HttpServerFilter;
+import org.glassfish.grizzly.http.server.NetworkListener;
 import org.glassfish.jersey.grizzly2.httpserver.GrizzlyHttpServerFactory;
 import org.glassfish.jersey.server.ResourceConfig;
 
@@ -35,16 +37,9 @@ public class Main {
     protected static HttpServer startServer() throws IOException {
         System.out.println("Starting grizzly...");
         ResourceConfig rc = new ResourceConfig();
+        rc.register(HeaderFilter.class);
         rc.packages(true, "com.tina");
         return GrizzlyHttpServerFactory.createHttpServer(getBaseURI(), rc);
-    /*
-        final Map<String, String> initParams = new HashMap<String, String>();
-
-        initParams.put("com.sun.jersey.config.property.packages", "com.esri");
-
-        System.out.println("Starting grizzly2...");
-        return GrizzlyWebContainerFactory.create(BASE_URI, initParams);
-    */
     }
 
     public static void main(String[] args) throws IOException {
