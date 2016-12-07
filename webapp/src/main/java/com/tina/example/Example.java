@@ -1,5 +1,6 @@
 package com.tina.example;
 
+import javax.annotation.PostConstruct;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 
@@ -21,6 +22,9 @@ public class Example {
     public String sayHelloToUTF8(@PathParam("param") String username) {
         return "Hello " + username;
     }
+    
+
+    
 
     @GET
     @Path("/get")
@@ -42,4 +46,7 @@ public class Example {
         user.setName("update name:"+user.getName());
         return user;
     }
+    
+
+    
 }
