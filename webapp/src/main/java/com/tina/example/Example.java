@@ -2,56 +2,79 @@ package com.tina.example;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
 /**
  * Created by Administrator on 2016/12/5.
  */
-@Path("/demo")
+@Path("/user")
 public class Example {
-    @GET
-    @Produces(MediaType.TEXT_PLAIN)
-    public String sayHello() {
-        return "Hello World!" ;
-    }
-
-
-
-
-    @GET
-    @Path("/{aaaa}-{bbbb}")
-    @Produces("text/plain;charset=UTF-8")
-    public String sayHelloToUTF8(@PathParam("aaaa") String username, @PathParam("bbbb") String password) {
-        return "Hello " + username + "+" + password;
-    }
-
-    @GET
-    @Path("/{aaaa}")
-    @Produces("text/plain;charset=UTF-8")
-    public String sayHelloToUTF82(@PathParam("aaaa") String username) {
-        return "Hello " + username + "+";
-    }
-
-    @GET
-    @Path("/get")
-    @Produces(MediaType.APPLICATION_JSON)
-    public User sayHelloToJson(@QueryParam("username") String username, @QueryParam("id") int id) {
-        User user= new User();
-        user.setId(id);
-        user.setName(username);
-        return user;
-    }
-
-
     @POST
-    @Path("/update/{aaaa}")
+    @Path("/insert")
+    @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public User updateUser(User user) {
-        System.out.println(user);
-        if (user == null) {
-            user = new User();
-        }
-        user.setId(2);
-        user.setName("update name:"+user.getName());
+    public User insert(User user) {
+        Store.save(user);
         return user;
     }
+
+    @GET
+    @Path("/list")
+    public List<User> list() {
+        return Store.getUserList();
+    }
+
+    @GET
+    @Path("/{id}")
+    public User getById(@PathParam("id") int id) {
+        for (User user : Store.getUserList()) {
+            if (user.getId() == id) {
+                return user;
+            }
+        }
+        return null;
+    }
+
+    @GET
+    public List<User> getByUsername(@QueryParam("username") String username) {
+        List<User> returnUser = new ArrayList<User>();
+        for (User user : Store.getUserList()) {
+            if (user.getUsername().equals(username)) {
+                returnUser.add(user);
+            }
+        }
+        return returnUser;
+    }
+
+    @PUT
+    @Path("/{id}")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public User updateById(@PathParam("id")int id, User user) {
+        for (User storedUser : Store.getUserList()) {
+            if (storedUser.getId() == id) {
+                storedUser.setUsername(user.getUsername());
+                storedUser.setPassword(user.getPassword());
+                return storedUser;
+            }
+        }
+        return null;
+    }
+
+    @DELETE
+    @Path("/{id}")
+    public User removeById(@PathParam("id")int id) {
+        Iterator<User> it = Store.getUserList().iterator();
+        while(it.hasNext()) {
+            User user = it.next();
+            if (user.getId() == id) {
+                it.remove();
+                return user;
+            }
+        }
+        return null;
+    }
+
 }

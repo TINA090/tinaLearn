@@ -16,7 +16,7 @@
 </template>
 <script>
 export default {
-  name: 'login',
+  username: 'login',
   date () {
     return {
       username: ''

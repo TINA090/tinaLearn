@@ -9,7 +9,7 @@
 import Layout from 'components/Layout'
 import Login from 'components/Login'
 export default {
-  name: 'app',
+  username: 'app',
   components: {
     Layout,
     Login

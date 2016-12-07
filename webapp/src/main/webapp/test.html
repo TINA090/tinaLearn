@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://unpkg.com/vue/dist/vue.js"></script>
+        <script src="https://cdn.jsdelivr.net/vue.resource/1.0.3/vue-resource.min.js"></script>
+    </head>
+    <style>
+        table td{
+            border: 1px solid
+        }
+    </style>
+    <body>
+        <div id="app">
+            <span>{{msg}}</span>
+            <div>
+                Username: <input v-model="user.username"/>
+                Password: <input v-model="user.password"/>
+                <button @click="insert()">增加用户</button>
+                <button @click="search()">查找用户</button>
+            </div>
+
+            <div>
+                <button @click="list()">获取全部用户</button>
+                <table>
+                    <head>
+                        <th>ID</th>
+                        <th>Username</th>
+                        <th>Password</th>
+                        <th>Operator</th>
+                    </head>
+                    <tbody>
+                        <tr v-for="(user, index) in userList">
+                            <td>{{user.id}}</td>
+                            <td><input v-model="user.username"></td>
+                            <td><input v-model="user.password"></td>
+                            <td>
+                                <button @click="remove(user.id, index)">删除</button>
+                                <button @click="update(user)">更新</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </body>
+    <script>
+        var root = 'http://localhost:8080/user',
+        dataType = 'json';
+        success = function(data) {
+            this.msg = 'success';
+            setTimeout(function() {
+                this.msg = ''
+            }, 1000);
+            return data;
+        }
+        new Vue({
+            el: '#app',
+            data: {
+                msg: '',
+                user: {
+                    username: '',
+                    password: ''
+                },
+                userList: []
+            },
+            methods: {
+                insert: function() {
+                    console.log(this)
+                    this.$http.post(root + '/insert', this.user)
+                        .then(success.bind(this))
+                },
+                list: function() {
+                    this.$http.get(root + '/list')
+                        .then(success.bind(this))
+                        .then(function(res) {
+                            this.userList = res.data;
+                        })
+                },
+                remove: function(id, index) {
+                    this.$http.delete(root+ '/' + id)
+                        .then(success.bind(this))
+                        .then(function(res) {
+                            this.userList.splice(index, 1);
+                        })
+                },
+                update: function(user) {
+                    this.$http.put(root+ '/' + user.id, user)
+                        .then(success.bind(this))
+                },
+                search: function() {
+                    this.$http.get(root+ '?username=' + this.user.username)
+                        .then(success.bind(this))
+                        .then(function(res) {
+                            this.userList = res.data;
+                        })
+                }
+
+            }
+        })
+    </script>
+</html>
