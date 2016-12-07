@@ -2,17 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="abfd1cc5-6bf5-4638-8632-9cf7334f6627" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/.classpath" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/.gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/.project" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/.settings/org.eclipse.jdt.core.prefs" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/.settings/org.eclipse.m2e.core.prefs" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/src/main/java/com/tina/example/Example2.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/src/main/java/com/tina/example/User2.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/src/main/java/com/tina/main/Main.java" afterPath="$PROJECT_DIR$/webapp/src/main/java/com/tina/main/Main.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="tinaLearn.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -109,8 +100,8 @@
       <file leaf-file-name="workspace.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2470">
-              <caret line="130" column="13" selection-start-line="130" selection-start-column="13" selection-end-line="130" selection-end-column="13" />
+            <state relative-caret-position="2052">
+              <caret line="108" column="13" selection-start-line="108" selection-start-column="13" selection-end-line="108" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -999,7 +990,14 @@
       <option name="project" value="LOCAL" />
       <updated>1481121156511</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Merge branch 'master' of https://github.com/TINA090/tinaLearn&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;webapp/src/main/java/com/tina/example/Example.java&#10;#&#9;webapp/src/main/java/com/tina/example/User.java&#10;">
+      <created>1481121848715</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1481121848715</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1089,7 +1087,8 @@
     <MESSAGE value="调整main" />
     <MESSAGE value="add filter" />
     <MESSAGE value="update" />
-    <option name="LAST_COMMIT_MESSAGE" value="update" />
+    <MESSAGE value="Merge branch 'master' of https://github.com/TINA090/tinaLearn&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;webapp/src/main/java/com/tina/example/Example.java&#10;#&#9;webapp/src/main/java/com/tina/example/User.java&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'master' of https://github.com/TINA090/tinaLearn&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;webapp/src/main/java/com/tina/example/Example.java&#10;#&#9;webapp/src/main/java/com/tina/example/User.java&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1429,8 +1428,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2470">
-          <caret line="130" column="13" selection-start-line="130" selection-start-column="13" selection-end-line="130" selection-end-column="13" />
+        <state relative-caret-position="2052">
+          <caret line="108" column="13" selection-start-line="108" selection-start-column="13" selection-end-line="108" selection-end-column="13" />
           <folding />
         </state>
       </provider>
